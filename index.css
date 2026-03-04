@@ -80,6 +80,42 @@ h2 {
     position: relative;
 }
 
+/* Small decor for section titles inside cards */
+.card h2 {
+    padding-bottom: 6px;
+}
+
+.card h2::after {
+    content: '';
+    position: absolute;
+    left: -6px;
+    bottom: 0;
+    height: 10px;
+    width: calc(100% + 12px);
+    border-radius: 999px;
+    background: repeating-linear-gradient(
+        -45deg,
+        var(--tape-color-1) 0 10px,
+        var(--tape-color-2) 10px 20px
+    );
+    opacity: 0.55;
+    transform: rotate(-1deg);
+    z-index: -1;
+}
+
+.card h2::before {
+    content: '';
+    position: absolute;
+    right: -14px;
+    bottom: 2px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--pink-medium);
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.05);
+    opacity: 0.9;
+}
+
 /* Strawberry image icon sizes */
 .straw-icon {
     height: 1em;
@@ -114,8 +150,8 @@ h2 {
     padding: 40px 35px;
     margin-bottom: 20px;
     background: #fff;
-    border-radius: 20px 2px 20px 2px;
-    /* Irregular paper look */
+    border-radius: 24px;
+    border: 2px solid var(--tape-color-1);
     transform: rotate(1deg);
     position: relative;
 }
@@ -124,7 +160,7 @@ h2 {
 .header-inner {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 0;
 }
 
 .header-text {
